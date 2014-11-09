@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Главная</title>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
+</head>
+<body>
+<div class="row container_row">
+    <div class="page-content clearfix">
+        <div class="jumbotron-white">
+            <ul class="list-inline row menu">
+                <li class="col-md-3"><a href="{% url 'account' %}">Моя страница |</a></li>
+                <li class="col-md-2"><a href="{% url 'news' %}">Новости |</a></li>
+                <li class="col-md-2"><a href="{% url 'forum' %}">Форум |</a></li>
+                <li class="col-md-2"><a href="{% url 'rating' %}">Рейтинг |</a></li>
+                <li class="col-md-2"><a href="{% url 'reviews' %}">Рецензии </a></li>
+            </ul>
+            <div class="row">
+                <p class="col-md-3 col-md-offset-1 site-name"><a href="{% url 'index' %}">LIVEBOOK</a></p>
+
+                <div class="col-md-7 search">
+                    <p class="col-md-3">Найти книгу: </p>
+                    <input class="col-md-4" type="search" placeholder="Найти">
+                    <button type="submit">Найти</button>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="jumbotron-white col-md-8 content">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">Профиль</a></li>
+                        <li><a href="#tab2" data-toggle="tab">Рецензии</a></li>
+                        <li><a href="#tab3" data-toggle="tab">Оценки</a></li>
+                        <li><a href="#tab4" data-toggle="tab">Книги</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="row prof">
+                                <img class="avatar col-md-3" src="../../static/img/disk000.jpg">
+
+                                <div class="col-md-9">
+                                    <div class="row">Имя пользователя</div>
+                                    <div class="row">Дата рождения</div>
+                                    <div class="row">Адрес</div>
+                                    <div class="row">О себе</div>
+                                    <div class="row">Хобби</div>
+                                    <div class="row">Предпочитаемый жанр</div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                            <p class="title">Мои рецензии</p>
+
+                            <div class="row jumbotron-white">
+                                <div class="row">Название рецензии</div>
+                                <div class="row">Автор</div>
+                                <div class="row">Текст рецензии</div>
+                            </div>
+                            <div class="row jumbotron-white">
+                                <div class="row">Название рецензии</div>
+                                <div class="row">Автор</div>
+                                <div class="row">Текст рецензии</div>
+                            </div>
+                            <div class="row jumbotron-white">
+                                <div class="row">Название рецензии</div>
+                                <div class="row">Автор</div>
+                                <div class="row">Текст рецензии</div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="tab3">
+                            <p class="title"> Мои оценки</p>
+
+                            <div class="row jumbotron-white">
+                                <div class="row">Название книги</div>
+                                <div class="row">Пользователь</div>
+                                <div class="row">Оценка</div>
+                            </div>
+                            <div class="row jumbotron-white">
+                                <div class="row">Название книги</div>
+                                <div class="row">Пользователь</div>
+                                <div class="row">Оценка</div>
+                            </div>
+                            <div class="row jumbotron-white">
+                                <div class="row">Название книги</div>
+                                <div class="row">Пользователь</div>
+                                <div class="row">Оценка</div>
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="tab4">
+                            <p class="title">Мои книги</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 navigation">
+                <div class="col-md-12 jumbotron-white ">
+                    <p class="name">Лучшие книги</p>
+                    <a>«Война и мир» — Лев Толстой</a><br>
+                    <a>«Унесённые ветром» — Маргарет Митчелл </a><br>
+                    <a>«Гарри Поттер и философский камень» — Джоан Роулинг</a><br>
+                </div>
+                <div class="jumbotron-white col-md-12">
+                    <p class="name">Навигация</p>
+
+                    <a>Боевики</a><br>
+                    <a>Военные</a><br>
+                    <a>Детективы</a><br>
+                    <a>Детская проза</a><br>
+                    <a>Драма</a><br>
+                    <a>Историческая проза</a><br>
+                    <a>Классика</a><br>
+                    <a>Научная фантастика</a><br>
+                    <a>Приключения</a><br>
+                    <a>Триллеры</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="jumbotron-white" style="text-align: center">
+                <p>Данный сайт является курсовой работой по Django</p>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+.container_row {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #777777;
+}
+
+.page-content {
+    max-width: 980px;
+    min-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jumbotron-white {
+    background-color: #FFFFFF;
+    border: 1px solid #e1e1e8;
+    border-radius: 5px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    margin-left: 5px;
+    padding-top: 15px;
+
+}
+
+.menu {
+    margin-left: 20px;
+    font-size: x-large;
+}
+
+.site-name {
+    font-size: 45px;
+}
+
+.navigation {
+    width: 330px;
+}
+
+.search {
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.content {
+    height: 425px;
+    background-color: #d0d0d0;
+}
+
+.news {
+    background-color: #d0d0d0;
+}
+
+.jumbotron-white .row {
+    margin: 0;
+}
+
+.book {
+    margin-left: 35px;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    color: cornflowerblue;
+}
+
+.book-title {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.cover {
+    width: 60px;
+    height: 70px;
+    float: left;
+}
+
+.name {
+    text-align: center;
+    font-size: 25px;
+    color: cornflowerblue;
+    border-bottom: solid #8c8c8c;
+}
+
+.prof{
+    background-color: #ffffff;
+}
