@@ -1,17 +1,13 @@
 {% extends 'Livebook/base.html' %}
-
 {% block content %}
-    <div class="row">
-        <p class="title">Последние добавленные книги</p></div>
-
-    {% for book in books %}
         <div class="col-md-5 jumbotron-white book">
             <div class="row">
-                <a class="book-title" href="{% url 'book'  book.id %}">{{ book.name }}</a>
+                <a class="book-title">{{ book.name }}</a>
             </div>
             <img src="../../static/img/disk000.jpg" class="cover">
             <a>{{ book.author.name }}</a>
+
             <p> Аннотация к книге</p>
+            <p>{{ book.annotation }}</p>
         </div>
-    {% endfor %}
 {% endblock %}

@@ -1,0 +1,66 @@
+
+        [
+  {
+    "model": "Livebook.Book",
+    "pk": 1,
+    "fields": {
+      "name": "Peace and war",
+      "author": 1,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 2,
+    "fields": {
+      "name": "Peace and war",
+      "author": 1,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 3,
+    "fields": {
+      "name": "Peace and war",
+      "author": 1,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 4,
+    "fields": {
+      "name": "Peace and war",
+      "author": 1,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 5,
+    "fields": {
+      "name": "Peace and war",
+      "author": 2,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 6,
+    "fields": {
+      "name": "Peace and war",
+      "author": 3,
+      "date": 1896
+    }
+  },
+           {
+    "model": "Livebook.Book",
+    "pk": 7,
+    "fields": {
+      "name": "Peace and war",
+      "author": 2,
+      "date": 1896
+    }
+  }
+]

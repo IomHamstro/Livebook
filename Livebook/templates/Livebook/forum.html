@@ -1,113 +1,54 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Главная</title>
-    <script src="../../static/js/jquery.min.js"></script>
-    <script src="../../static/js/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
-</head>
-<body>
-<div class="row container_row">
-    <div class="page-content clearfix">
-         <div class="jumbotron-white">
-            <ul class="list-inline row menu">
-                <li class="col-md-3"><a href="{% url 'account' %}">Моя страница |</a></li>
-                <li class="col-md-2"><a href="{% url 'news' %}">Новости |</a></li>
-                <li class="col-md-2"><a href="{% url 'forum' %}">Форум |</a></li>
-                <li class="col-md-2"><a href="{% url 'rating' %}">Рейтинг |</a></li>
-                <li class="col-md-2"><a href="{% url 'reviews' %}">Рецензии </a></li>
-            </ul>
-            <div class="row">
-                <p class="col-md-3 col-md-offset-1 site-name"><a href="{% url 'index' %}">LIVEBOOK</a></p>
-                <div class="col-md-7 search">
-                     <p class="col-md-3">Найти книгу: </p>
-                     <input class="col-md-4" type="search" placeholder="Найти">
-                    <button type="submit">Найти</button>
-                </div>
+{% extends 'Livebook/base.html' %}
+{% block content %}
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Раздел</th>
+            <th>Тема</th>
+            <th>Последнее сообщение</th>
+            <th>Сообщений</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Классика</td>
+            <td>Виктор Гюго</td>
+            <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
+                Великий французский поэт, романист, драматург, общественный деятель,
+                лидер французского романтизма, классик мировой литературы.
+            </td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Классика</td>
+            <td>Виктор Гюго</td>
+            <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
+                Великий французский поэт, романист, драматург, общественный деятель,
+                лидер французского романтизма, классик мировой литературы.
+            </td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Классика</td>
+            <td>Виктор Гюго</td>
+            <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
+                Великий французский поэт, романист, драматург, общественный деятель,
+                лидер французского романтизма, классик мировой литературы.
+            </td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>
+    <nav>
+        <ul class="pagination">
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
 
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="jumbotron-white col-md-8 content">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                    <tr>
-                        <th>Раздел</th>
-                        <th>Тема</th>
-                        <th>Последнее сообщение</th>
-                        <th>Сообщений</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Классика</td>
-                        <td>Виктор Гюго</td>
-                        <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
-                            Великий французский поэт, романист, драматург, общественный деятель,
-                            лидер французского романтизма, классик мировой литературы.</td>
-                        <td>1</td>
-                    </tr>
-                     <tr>
-                        <td>Классика</td>
-                        <td>Виктор Гюго</td>
-                        <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
-                            Великий французский поэт, романист, драматург, общественный деятель,
-                            лидер французского романтизма, классик мировой литературы.</td>
-                        <td>1</td>
-                    </tr>
-                     <tr>
-                        <td>Классика</td>
-                        <td>Виктор Гюго</td>
-                        <td>Гюго, Виктор Мари (Victor Hugo) 1802-1885, Франция.
-                            Великий французский поэт, романист, драматург, общественный деятель,
-                            лидер французского романтизма, классик мировой литературы.</td>
-                        <td>1</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <nav>
-                        <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
-                        </ul>
-                    </nav>
-            </div>
-            <div class="col-md-4 navigation">
-                <div class="col-md-12 jumbotron-white ">
-                   <p class="name">Лучшие книги</p>
-                    <a>«Война и мир» — Лев Толстой</a><br>
-                    <a>«Унесённые ветром» — Маргарет Митчелл </a><br>
-                    <a>«Гарри Поттер и философский камень» — Джоан Роулинг</a><br>
-                </div>
-                <div class="jumbotron-white col-md-12">
-                    <p class="name">Навигация</p>
-                    <a>Боевики</a><br>
-                    <a>Военные</a><br>
-                    <a>Детективы</a><br>
-                    <a>Детская проза</a><br>
-                    <a>Драма</a><br>
-                    <a>Историческая проза</a><br>
-                    <a>Классика</a><br>
-                    <a>Научная фантастика</a><br>
-                    <a>Приключения</a><br>
-                    <a>Триллеры</a>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <div class="jumbotron-white" style="text-align: center">
-                <p>Данный сайт является курсовой работой по Django</p>
-            </div>
-        </footer>
-    </div>
-</div>
-</body>
-</html>
+{% endblock %}

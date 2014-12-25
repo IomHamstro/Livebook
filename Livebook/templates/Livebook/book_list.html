@@ -1,0 +1,27 @@
+{% extends 'Livebook/base.html' %}
+{% block content %}
+    {% for book in books %}
+        <div class="col-md-5 jumbotron-white book">
+            <div class="row">
+                <a class="book-title">{{ book.name }}</a>
+            </div>
+            <img src="../../static/img/disk000.jpg" class="cover">
+            <a>{{ book.author.name }}</a>
+
+            <p> Аннотация к книге</p>
+        </div>
+    {% endfor %}
+    {% if is_paginated %}
+        <nav>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li><a href="/reviews?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% endif %}
+                <li><a href="#">{{ page_obj.number }}</a></li>
+                {% if page_obj.has_next %}
+                    <li><a href="/reviews?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+{% endblock %}

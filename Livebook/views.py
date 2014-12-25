@@ -1,9 +1,24 @@
-from django.contrib.auth import authenticate, login
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, FormView
 
-from Livebook.forms import LoginForm
+from Livebook.forms import RegistrationForm
+from Livebook.models import Book, Review, News, User
+
+
+def registration(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            st = form.save(commit=False)  # not saving
+            st.save()
+            return HttpResponseRedirect(reverse('index'))
+        return HttpResponse(form.errors)
+    elif request.method == "GET":
+        f = RegistrationForm()
+        context = {"f": f}
+        return render(request, 'Livebook/registration.html', context)
 
 
 def index(request):
@@ -11,37 +26,40 @@ def index(request):
         request,
         "Livebook/index.html",
         {
-            # "books": Book.objects.order_by("-submitDate").all()[:4]
+            "books": Book.objects.all()[:4]
         }
     )
 
 
 def sign_in(request):
-    if request.POST:
-        f = LoginForm(request.POST)
-        if f.is_valid():
-            user = authenticate(
-                username=f.cleaned_data["username"],
-                password=f.cleaned_data["password"]
-            )
-            if user:
-                login(request, user)
-                return HttpResponseRedirect(reverse('account'))
-            else:
-                return HttpResponseRedirect(reverse('index'))
-    else:
-        f = LoginForm()
-        context = {"f": f}
-        if request.GET.has_key("next"):
-            context["next"] = request.GET["next"]
-        return render(request, "Livebook/index.html", context)
+    if request.method == "POST":
+        user = User.objects.\
+            filter(login=request.POST.get("username", False)).\
+            filter(password=request.POST.get("password", False)).first()
+        if user:
+                return HttpResponseRedirect(reverse('account', kwargs={"user_id": user.id}))
+        else:
+            return render(request, "Livebook/error.html")
 
 
-def account(request):
+def error(request):
+    return render(
+        request,
+        "Livebook/error.html",
+
+    )
+
+
+def account(request, user_id):
+    user = User.objects.filter(id=user_id).first()
+    myRewiews = Review.objects.filter(user=user_id)[:2]
     return render(
         request,
         "Livebook/account.html",
-
+        {
+            "user": user,
+            "reviews": myRewiews
+        }
     )
 
 
@@ -49,13 +67,46 @@ def rating(request):
     return render(request, "Livebook/rating.html")
 
 
-def reviews(request):
-    return render(request, "Livebook/reviews.html")
+class ReviewsView(ListView):
+    model = Review
+    template_name = "Livebook/reviews.html"
+    context_object_name = "reviews"
+    paginate_by = 2
+
+    def get_queryset(self):
+        qs = Review.objects.order_by("-date")
+        return qs
 
 
 def forum(request):
     return render(request, "Livebook/forum.html")
 
 
-def news(request):
-    return render(request, "Livebook/news.html")
+class NewsView(ListView):
+    model = News
+    template_name = "Livebook/news.html"
+    context_object_name = "news"
+    paginate_by = 2
+
+    def get_queryset(self):
+        qs = News.objects.order_by("-date")
+        return qs
+
+
+def book(request, id):
+
+    one_book = Book.objects.filter(id=id).first()
+    return render(
+        request,
+        "Livebook/book.html",
+        {"book": one_book}
+    )
+
+
+
+def book_list(request):
+    return render(
+        request,
+        "Livebook/book_list.html",
+        {"books": Book.objects.all()[:4]}
+    )

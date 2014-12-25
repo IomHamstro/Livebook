@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>LiveBook</title>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
+</head>
+<body>
+<div class="row container_row">
+    <div class="page-content clearfix">
+        <div class="jumbotron-white">
+            <ul class="list-inline row menu">
+                <li class="col-md-3"><a href="{% url 'account' 1 %}">Моя страница |</a></li>
+                <li class="col-md-2"><a href="{% url 'news' %}">Новости |</a></li>
+                <li class="col-md-2"><a href="{% url 'forum' %}">Форум |</a></li>
+                <li class="col-md-2"><a href="{% url 'rating' %}">Рейтинг |</a></li>
+                <li class="col-md-2"><a href="{% url 'reviews' %}">Рецензии </a></li>
+            </ul>
+            <div class="row">
+                <p class="col-md-3 col-md-offset-1 site-name"><a href="{% url 'index' %}">LIVEBOOK</a></p>
+
+                <div class="col-md-7 search">
+                    <p class="col-md-3">Найти книгу: </p>
+                    <input class="col-md-4" type="search" placeholder="Найти">
+                    <button type="submit">Найти</button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="jumbotron-white col-md-8 content">
+                {% block content %}{% endblock %}
+
+            </div>
+            <div class="col-md-4 navigation">
+                <div class="col-md-12 jumbotron-white ">
+                    <p class="name">Вход</p>
+
+{#                    <form action='{% url 'sign_in' %}' method='POST'>#}
+{#                        {% if next %}#}
+                            <form class="form-signin" role="form" action="{% url 'sign_in' %}?next={{ next }}"
+{#                                  method='POST'>#}
+{#                        {% else %}#}
+                            <form class="form-signin" role="form" action="{% url 'sign_in' %}" method='POST'>
+{#                        {% endif %}#}
+                        <div class="row">
+                            <input class="col-md-6" type="text" name="username" placeholder="Логин"/>
+                            <input class="col-md-6" type="password" name="password" placeholder="Пароль">
+                        </div>
+
+                        <div class="row" style="margin-top: 10px">
+
+                            <input type="checkbox"> Запомнить меня
+
+                           {% csrf_token %}
+{#                            {{ f.as_p }}#}
+                            <input type="submit" value="Вход" style="margin-left: 20px">
+
+                        </div>
+                        <div class="row" style="margin-top: 10px">
+                            <a href="{% url 'registration' %}">Регистрация</a>
+                            <a>|Забыли пароль?</a>
+                        </div>
+                        </form>
+                </div>
+                <div class="jumbotron-white col-md-12 ">
+                    <p class="name">Навигация</p>
+                    <a>Боевики</a><br>
+                    <a>Военные</a><br>
+                    <a>Детективы</a><br>
+                    <a>Детская проза</a><br>
+                    <a>Драма</a><br>
+                    <a>Историческая проза</a><br>
+                    <a>Классика</a><br>
+                    <a>Научная фантастика</a><br>
+                    <a>Приключения</a><br>
+                    <a>Триллеры</a>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="jumbotron-white" style="text-align: center">
+                <p>Данный сайт является курсовой работой по Django</p>
+            </div>
+        </footer>
+    </div>
+</div>
+</body>
+</html>
