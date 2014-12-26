@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from django.contrib.auth.models import User
 from django.forms import ModelForm, Form
-from Livebook.models import User
+from Livebook.models import UserProfile
 
 
 class LoginForm(Form):
@@ -25,7 +26,13 @@ class LoginForm(Form):
 #     hobby = forms.CharField(label='Хобби')
 #     # avatar = forms.ImageField()
 
-class RegistrationForm(ModelForm):
+class RegistrationProfileForm(ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['email',  'birthday']
+
+
+class RegistrationUserForm(ModelForm):
     class Meta:
         model = User
-        fields = ['login', 'email', 'password', 'birthday']
+        fields = ['username',  'password']

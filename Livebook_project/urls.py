@@ -11,7 +11,7 @@ urlpatterns = patterns('Livebook.views',
     url(r'^$', 'index', name='index'),
     url(r'^signin/$', 'sign_in', name='sign_in'),
     url(r'^error/$', 'error', name='error'),
-    url(r'^account/(?P<user_id>\d+)/$', 'account', name='account'),
+    url(r'^account/$', 'account', name='account'),
 
     url(r'^news/$',  NewsView.as_view(), name='news'),
     url(r'^news(?P<page>\d+)$',  NewsView.as_view(), name='news'),
@@ -27,7 +27,6 @@ urlpatterns = patterns('Livebook.views',
     url(r'^book(?P<id>\d+)$', 'book', name='book'),
     url(r'^book_list$', 'book_list', name='book_list'),
 
-    # url(r'^analytics/', include('analytics.urls', namespace='analytics')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

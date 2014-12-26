@@ -1,18 +1,20 @@
+from django.contrib.auth import models
+from django.contrib.auth.models import User
 from django.db import models
+from django.db.models import OneToOneField
 
 
-class User(models.Model):
-    login = models.CharField(max_length=255)
+class UserProfile(models.Model):
     email = models.EmailField()
-    password = models.CharField(max_length=255)
     name = models.TextField()
     surname = models.TextField()
     birthday = models.DateField()
     address = models.TextField()
     information = models.TextField()
     hobby = models.TextField()
-    avatar = models.ImageField(upload_to="/user/avatar")
+    # avatar = models.ImageField(upload_to="/user/avatar")
     books = models.ManyToManyField('Book')
+    user = OneToOneField(User)
 
 
 class Author(models.Model):

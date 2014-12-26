@@ -4,63 +4,50 @@
     "model": "Livebook.Book",
     "pk": 1,
     "fields": {
-      "name": "Peace and war",
-      "author": 1,
-      "date": 1896
+      "name": "Сесиль Стина",
+      "author": 2,
+      "date": 2014,
+      "annotation": "Действие романов немецкого классика Теодора Фонтане происходит в Германии времен  ..."
     }
   },
            {
     "model": "Livebook.Book",
     "pk": 2,
     "fields": {
-      "name": "Peace and war",
+      "name": "Война и мир",
       "author": 1,
-      "date": 1896
+      "date": 1896,
+      "annotation": "«Война и мир» стала уникальным явлением как в русской, так и зарубежной литературе. ..."
     }
   },
            {
     "model": "Livebook.Book",
     "pk": 3,
     "fields": {
-      "name": "Peace and war",
-      "author": 1,
-      "date": 1896
+      "name": "Страдания юного Вертера. Фауст",
+      "author": 3,
+      "date": 1795,
+      "annotation": " Герой трагедии ФАУСТ - личность историческая, он жил в XVI веке,  ..."
     }
   },
            {
     "model": "Livebook.Book",
     "pk": 4,
     "fields": {
-      "name": "Peace and war",
+      "name": "После бала",
       "author": 1,
-      "date": 1896
+      "date": 1867,
+      "annotation": "В основе рассказа лежат события, произошедшие со старшим братом Льва Толстого — Сергеем. ..."
     }
   },
            {
     "model": "Livebook.Book",
     "pk": 5,
     "fields": {
-      "name": "Peace and war",
-      "author": 2,
-      "date": 1896
-    }
-  },
-           {
-    "model": "Livebook.Book",
-    "pk": 6,
-    "fields": {
-      "name": "Peace and war",
+      "name": "Эгмонт",
       "author": 3,
-      "date": 1896
-    }
-  },
-           {
-    "model": "Livebook.Book",
-    "pk": 7,
-    "fields": {
-      "name": "Peace and war",
-      "author": 2,
-      "date": 1896
+      "date": 1801,
+      "annotation": "Фоном для трагедии «Эгмонт» служит борьба Нидерландов с испанским господством. Однако Эгмонт, поставленный в положение борца за национальную независимость, не охарактеризован как борец, любовника в нём заслоняет политик....  "
     }
   }
 ]
